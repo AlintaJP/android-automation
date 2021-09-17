@@ -1,0 +1,11 @@
+{
+  "validCreds": {
+    "email": "test@test.com",
+    "password": "12345678"
+  },
+
+  "invalidCreds": {
+    "email": "",
+    "password": "1234567"
+  }
+}

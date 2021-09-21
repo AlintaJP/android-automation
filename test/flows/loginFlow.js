@@ -1,6 +1,7 @@
 import loginPage from "../pageObjects/loginPage";
 import nav from "../pageObjects/navigation";
 import loginMsgData from "../testData/loginMsgData.json";
+import allureReporter from "@wdio/allure-reporter";
 
 class LoginFlow {
   constructor(email, password) {
@@ -10,8 +11,11 @@ class LoginFlow {
 
   async loginWithCredentials() {
     if (loginPage.isOnLoginScreen()) await nav.goToLoginPage();
+    allureReporter.addStep(`Input email as ${this.email}`);
     await loginPage.setEmail(this.email);
+    allureReporter.addStep(`Input email as ${this.password}`);
     await loginPage.setPassword(this.password);
+    allureReporter.addStep(`Click on Login button`);
     await loginPage.clickLoginBtn();
   }
 

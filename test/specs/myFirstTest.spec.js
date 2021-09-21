@@ -3,7 +3,7 @@ import formsFlow from "../flows/formsFlow";
 import loginCreds from "../testData/loginCreds.json";
 import { swipeRight } from "../helpers/swipeRight";
 
-describe(`Account Function for ${browser.capabilities.deviceName}`, async () => {
+describe(`Login flow test suite for ${browser.capabilities.deviceName}`, async () => {
   it.only("Should login successfully with valid creds", async () => {
     const email = loginCreds.validCreds.email;
     const password = loginCreds.validCreds.password;
